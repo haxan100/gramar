@@ -1,0 +1,267 @@
+<style>
+	.bege{
+    background: linear-gradient(-145deg,#3ACD99, #0796B6)!important;
+	}
+		.sponser-link {
+			position: relative;
+		}
+
+		.sponser-link .list-links {
+			width: 100%;
+			display: none;
+			position: absolute;
+			z-index: 85;
+			background: #fff;
+			padding: 5px 0;
+		}
+
+		.sponser-link:hover .list-links {
+			display: block;
+		}
+
+		.sponser-link .list-links a {
+			display: block;
+			padding: 4px 7px;
+			border-bottom: 1px solid #eee;
+			color: #777;
+			text-align: center;
+		}
+
+		.sponser-link .list-links a:hover {
+			font-weight: 700;
+			color: #555;
+		}
+		body {
+			background: #FFFFFF !important;
+		}
+
+		.home-heading {
+			font-size: 48px;
+			font-weight: 300
+		}
+
+		.hS {
+			background: rgba(255, 255, 255, 0.15);
+			border: 1px solid #fff;
+			font-size: 16px;
+			display: block;
+			width: 100%;
+			border-radius: 7px;
+			padding: 10px 8px;
+			color: #fff;
+			position: relative;
+			opacity: .8
+		}
+
+		input.hS:focus {
+			border-color: #fff !important;
+			outline: none;
+			opacity: 1
+		}
+
+		input.hS::placeholder {
+			color: #fff;
+			opacity: .5
+		}
+
+		input.hS:-ms-input-placeholder {
+			color: #fff;
+			opacity: .5
+		}
+
+		input.hS::-ms-input-placeholder {
+			color: #fff;
+			opacity: .5
+		}
+
+		.sG {
+			position: relative
+		}
+
+		.sG::before {
+			position: absolute;
+			font-family: 'FontAwesome';
+			top: 1px;
+			right: 10px;
+			content: "\f002";
+			color: #fff;
+			font-size: 28px;
+			opacity: 1
+		}
+
+		.fts {
+			margin-top: 50px
+		}
+
+		.sib {
+			padding: 3px
+		}
+
+		.sib a {
+			border: 1px solid #fff;
+			border-radius: 10px;
+			color: #fff;
+			text-align: center;
+			display: block;
+			padding: 30px 2px;
+			transition: ease-in-out .15s all;
+			transform: scale(0.95);
+			box-sizing: border-box
+		}
+
+		.sib a:hover {
+			transform: scale(1);
+			background: rgba(255, 255, 255, 0.25);
+			color: #fff
+		}
+
+		.sib a:hover span {
+			border: 1px solid #fff
+		}
+
+		.sib a i {
+			font-size: 36px;
+			display: block;
+			padding-bottom: 10px
+		}
+
+		.sib a:hover {
+			opacity: 1
+		}
+
+		.rfs {
+			color: #fff;
+			text-align: right;
+			padding-top: 8px
+		}
+
+		.rfs a {
+			width: 160px;
+			display: inline-block;
+			text-align: center;
+			height: 125px;
+			background: rgba(255, 255, 255, 1);
+			color: #06666F;
+			font-weight: 700;
+			margin: 2px;
+			float: right
+		}
+
+		.rfs a:active,
+		.rfs a:focus {
+			text-decoration: none
+		}
+
+		.rfs a .icon {
+			display: block;
+			margin: 27px 0 10px
+		}
+
+		.rfs a:hover {
+			color: #000;
+			opacity: 1
+		}
+
+		.rfs a.org .icon {
+			color: #F6AD34
+		}
+
+		.rfs a.blue .icon {
+			color: #5AA4E9
+		}
+
+		.rfs a.red .icon {
+			color: #FF8585
+		}
+
+		.rfs a.prp .icon {
+			color: #9F6A93
+		}
+
+		.rfs a .arrow {
+			opacity: 0;
+			transition: ease-in-out all .25s;
+			font-size: 16px;
+			display: inline-block;
+			padding-right: 25px
+		}
+
+		.rfs a:hover .arrow {
+			color: #000;
+			opacity: 1;
+			padding-right: 0
+		}
+
+		.sBarN {
+			padding: 0 0 0 20px
+		}
+
+		.search-resultsHome {
+			background: #fff none repeat scroll 0 0;
+			border: 1px solid #CCC;
+			border-top: 0;
+			display: none;
+			font-family: "Roboto", sans-serif;
+			font-size: 18px;
+			font-weight: 300;
+			max-height: 250px;
+			min-height: 50px;
+			overflow: auto;
+			padding: 5px;
+			position: absolute;
+			top: 100%;
+			border-bottom-right-radius: 5px;
+			border-bottom-left-radius: 5px;
+			width: 100%;
+			z-index: 50
+		}
+
+		.search-resultsHome .match {
+			box-sizing: border-box;
+			display: inline-block;
+			padding: 2px 5px;
+			width: 50%
+		}
+
+		.search-resultsHome .match a {
+			background: #fff none repeat scroll 0 0;
+			color: #464646;
+			display: block;
+			font-family: "Roboto", sans-serif;
+			font-size: 16px;
+			font-weight: 400;
+			background: #F5F9FA;
+			border-radius: 3px;
+			padding: 8px
+		}
+
+		.search-resultsHome .match a:hover {
+			font-weight: 400;
+			background: #E7F0F4;
+			color: #000
+		}
+
+		@media only screen and (max-width: 768px) {
+
+			.fts .sib {
+				width: 50%;
+				float: left
+			}
+
+			.sBarN {
+				padding: 0
+			}
+
+			.topHContain {
+				padding: 0 8px !important
+			}
+
+			.home-heading {
+				font-size: 36px
+			}
+		}
+
+		.langBtn {
+			margin: 3px;
+		}
+</style>
