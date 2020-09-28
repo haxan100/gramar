@@ -816,7 +816,7 @@ $url = $this->uri->segment(3);
 								// var_dump(base_url());
 							?>
 								
-								<li><a href="<?php base_url(); ?>kamusDetail/<?= $value->id_kamus ?> "><?= $value->nama_kamus ?></a></li>
+								<li><a href="<?= base_url(); ?>Gramar/kamusDetail/<?= $value->id_kamus ?> "><?= $value->nama_kamus ?></a></li>
 
 							<?php
 							}
