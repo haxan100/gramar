@@ -65,6 +65,21 @@
 	.form-control {
 		background-color: #e4e4e4;
 	}
+
+	.container {
+		width: 970px;
+		padding-top: 10px;
+	}
+
+	.char__containerss {
+		position: relative;
+		/* margin-bottom: 32px; */
+		/* padding: 32px 24px 24px; */
+		background-color: #FFFFFF;
+		border-radius: 8px;
+		box-shadow: 1 4px 10px 0 rgba(0, 0, 0, 0.1);
+		z-index: 2;
+	}
 </style>
 <div class="loadeng">
 	<p>
@@ -80,6 +95,17 @@
 				<div class="row" style="
 					margin-bottom: 10%;	">
 					<div class="container">
+
+
+						<div class="char__containerss">
+							<div class="ft-recharge-unify__chip">
+								<h1 class="title text-center">Cek Typo Online</h1>
+							</div>
+
+
+
+						</div>
+
 
 						<div class="col-md-12">
 
