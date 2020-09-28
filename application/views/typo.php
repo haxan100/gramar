@@ -1,7 +1,41 @@
 <!-- HEADER -->
+
+<link href="<?= base_url(); ?>assets\style\stylekamus.css" rel="stylesheet">
 <style>
 	.bege {
 		background: linear-gradient(-145deg, #3ACD99, #0796B6) !important;
+	}
+
+	.keyword__containers {
+		padding: 1000px;
+		margin-bottom: 3%;
+		position: relative;
+		padding: 32px 24px;
+		background-color: #FFFFFF;
+		border-radius: 8px;
+		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+		z-index: 1;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: large;
+		font-size: x-large;
+		font-weight: 600;
+		margin: 0;
+		text-align: center;
+
+		PADDING-BOTTOM: 2% !important;
+		padding-top: 2% !important;
+	}
+
+	.keyword__container {
+		padding: 9px 3px;
+		margin-bottom: 3%;
 	}
 
 	#foto_wrapper {
@@ -48,13 +82,30 @@
 					<div class="container">
 
 						<div class="col-md-12">
+
 							<h3>INPUT</h3>
-							<textarea id="input" name="input" class="form-control vertical" rows="15"></textarea><br>
+							<div class="keyword__container">
+								<textarea id="input" name="input" class="form-control vertical" rows="15"></textarea>
+								<br>
+
+							</div>
+
+
+
 							<button id="btnproses" type="button" class="btn btn-primary btn-block">PROSES</button>
 						</div>
 						<div class="col-md-12">
 							<h3>OUTPUT</h3>
-							<div id="output"></div>
+							<div class="keyword__containers">
+
+								<div id="output">
+
+								</div>
+
+							</div>
+
+
+
 							<!-- <textarea id="output" name="output" class="form-control vertical" rows="5"></textarea> -->
 						</div>
 
