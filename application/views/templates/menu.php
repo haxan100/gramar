@@ -64,7 +64,7 @@
 				</a>
 			</div>
 			<div class="col-md-6 sib">
-				<a href="<?= base_url(); ?>Gramar/kamusby">
+				<a href="<?= base_url(); ?>Gramar/kamusby/a">
 					<i class="fa fa-image"></i> Kamus Arti
 				</a>
 			</div>

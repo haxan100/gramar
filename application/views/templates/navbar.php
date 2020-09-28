@@ -25,8 +25,8 @@
 
 				<div class="pull-right col-sm-3 col-xs-12 text-right" style="padding:0;" id="searchSec">
 
-					<a href=" <?= base_url(); ?>Gramar/kamusby" class="logregBtn">Kamus Arti</a>
-					<a href=" <?= base_url(); ?>Gramar/typo"" class="logregBtn">Kata Dasar</a>
+					<a href=" <?= base_url(); ?>Gramar/kamusby/a" class="logregBtn">Kamus Arti</a>
+					<a href=" <?= base_url(); ?>Gramar/typo" class="logregBtn">Kata Dasar</a>
 
 
 					<i class="fa fa-search pull-right topsearch"></i>
