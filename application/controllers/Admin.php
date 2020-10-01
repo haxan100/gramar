@@ -10,6 +10,39 @@ class Admin extends CI_Controller {
 		$this->load->model('KataModel');
 		$this->load->model('LoginModel');
 	}
+	public function isLoggedInAdmin()
+	{
+		// Cek apakah terdapat session "admin_session"
+		// var_dump($this->session->userdata('login_admin'));die;
+		if ($this->session->userdata('login_admin'))
+			return true; // sudah login
+		else
+			return false; // belum login
+	}
+	function cekLoginAdmin()
+
+	{
+
+		if (!$this->isLoggedInAdmin()) {
+
+			$this->session->set_flashdata(
+
+				'notifikasi',
+
+				array(
+
+					'alert' => 'alert-danger',
+
+					'message' => 'Silahkan Login terlebih dahulu.',
+
+				)
+
+			);
+
+			redirect('admin/login');
+		}
+	}
+
 	public function login()
 	{
 
@@ -27,7 +60,7 @@ class Admin extends CI_Controller {
 	}
 	public function index()
 	{
-		$this->IsLogin();
+		$this->cekLoginAdmin();
 
 		$data['listTipe'] =
 		$this->KataModel->data_AllTipe($_POST);
@@ -174,7 +207,7 @@ class Admin extends CI_Controller {
 	public function kamus()
 	{
 
-		$this->IsLogin();
+		$this->cekLoginAdmin();
 		$data['listTipe'] =
 			$this->KataModel->data_AllTipe($_POST);
 
