@@ -160,8 +160,8 @@
 					},
 					height: 300,
 					toolbar: [
-						
-						['view', [ 'codeview']],
+
+						['view', ['codeview']],
 					],
 				});
 
@@ -218,8 +218,15 @@
 
 			}
 
+			$("#input").on("summernote.enter", function(we, e) {
+				console.log(e)
+				$(this).summernote("pasteHTML", "<br><br>");
+				e.preventDefault();
+			});
+
 			$('#btnproses').on('click', function() {
 				kosong();
+				$("#output").summernote("reset");
 				// $('#output').summernote('pasteHTML', "");
 				var btn = $(this);
 
