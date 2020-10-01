@@ -8,14 +8,33 @@ class Admin extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('KataModel');
+		$this->load->model('LoginModel');
+	}
+	public function login()
+	{
+
+		$this->load->view('templates/login');
+	}
+	public function IsLogin()
+	{
+		// var_dump($_SESSION['login_admin']);
+		if(!$_SESSION['login_admin']){
+			// alert("Harap Login");
+			redirect('admin/login');
+		}
+
+		# code...
 	}
 	public function index()
 	{
+		$this->IsLogin();
+
 		$data['listTipe'] =
 		$this->KataModel->data_AllTipe($_POST);
+		$data['title']= "Admin";
 
-		$this->load->view('templates/header');
-		$this->load->view('templates/navbar');
+		$this->load->view('templates/header', $data);
+		$this->load->view('templates/navbar_admin');
 		$this->load->view('admin',$data);
 		$this->load->view('templates/footer');
 	}
@@ -154,11 +173,17 @@ class Admin extends CI_Controller {
 	}
 	public function kamus()
 	{
+
+		$this->IsLogin();
 		$data['listTipe'] =
 			$this->KataModel->data_AllTipe($_POST);
 
-		$this->load->view('templates/header');
-		$this->load->view('templates/navbar');
+		$data['title'] = "Admin";
+
+		$this->load->view('templates/header', $data);
+		// $this->load->view('templates/navbar');
+
+		$this->load->view('templates/navbar_admin');
 		$this->load->view('admin_kamus', $data);
 		$this->load->view('templates/footer');
 	}
@@ -263,7 +288,56 @@ class Admin extends CI_Controller {
 			'errorInputs' => $errorInputs
 		));
 	}
-	
+	public function
+	CekLogin()
+	{
+		$email = $this->input->post('nama');
+		$password = $this->input->post('pass');
+		$cekUser  = $this->LoginModel->getAdminByEmailPass($email, $password);
+
+		// var_dump($cekUser, $cekUser>0);
+		if (count($cekUser) > 0) {
+
+			$user = $cekUser[0];
+			// var_dump($cekUser);
+			// $cekStatus = $user->status;
+			// if ($cekStatus == 0) {
+			// 	$error = true;
+			// 	$msg = "User Belum Aktif, Mohon Tunggu Sesaat";
+			// } else if ($cekStatus == 2) {
+
+			// 	$error = true;
+			// 	$msg = "User Telah Di Banned!";
+			// } else 
+			 {
+				$error = false;
+				$msg = "Berhasil Login";
+
+				$newdata = array(
+					'username'  => $user->username,
+					'nama'  => $user->nama,
+					// 'email'     => $user->email,
+					'id_admin'     => $user->id_admin,
+					// 'no_phone'     => $user->no_phone,
+
+					'login_admin' => TRUE
+				);
+				$this->session->set_userdata($newdata);
+			}
+		} else {
+			$error = true;
+			$msg = "Email Dan Password salah ";
+		}
+
+
+		$json = array(
+			'error' => $error,
+			'message' => $msg,
+		);
+
+		echo json_encode($json);
+		exit();
+	}
         
 }
         
