@@ -338,6 +338,73 @@ class Admin extends CI_Controller {
 		echo json_encode($json);
 		exit();
 	}
+	public function hapusKamus()
+
+	{
+
+		$id_kamus = $this->input->post('id_kamus', true);
+		$data = $this->KataModel->getKamusById($id_kamus);
+		// var_dump($data);die();
+		$status = false;
+		$message = 'Gagal menghapus Kamus!';
+		if (count($data) == 0) {
+			$message .= '<br>Tidak terdapat Kamus yang dimaksud.';
+		} else {
+
+			$hasil = $this->KataModel->hapusKamus($id_kamus);
+
+			if ($hasil) {
+
+				$status = true;
+				$message = 'Berhasil menghapus Kamus: <b>' . $data[0]->nama_kamus . '</b>';
+			} else {
+
+				$message .= 'Terjadi kesalahan. #ADM01';
+			}
+		}
+
+		echo json_encode(array(
+			'status' => $status,
+			'message' => $message,
+		));
+	}
+	public function EditKamus()
+	{
+		$nama_kamus = $this->input->post('nama_kamus', TRUE);
+		$id_kamus = $this->input->post('idkamus', TRUE);
+		$Deskripsi = $this->input->post('Deskripsi', TRUE);
+		$deskripsi_wiki = $this->input->post('deskripsi_wiki', TRUE);
+
+		$message = 'Gagal mengedit Kamus!<br>Silahkan lengkapi data yang diperlukan.';
+
+		$errorInputs = array();
+		$status = true;
+		$in = array(
+			'nama_kamus' => $nama_kamus,
+			'Deskripsi' => $Deskripsi,
+			'deskripsi_wiki' => $deskripsi_wiki,
+		);
+
+		if (empty($nama_kamus)) {
+			$status = false;
+			$errorInputs[] = array('#nama', 'Silahkan Isi Nama');
+		}
+
+		if ($status) {
+
+			if ($this->KataModel->edit_kamus($in, $id_kamus)) {
+				$message = "Berhasil Mengubah Kamus #1";
+			}
+		} else {
+			$message = "Gagal Mengubah Kamus #1";
+		}
+
+		echo json_encode(array(
+			'status' => $status,
+			'message' => $message,
+			'errorInputs' => $errorInputs
+		));
+	}
         
 }
         

@@ -197,5 +197,19 @@ class KataModel extends CI_Model
 
 		return $this->db->insert('kamus', $in);
 	}
+	public function hapusKamus($id_kamus)
+
+	{
+
+		$this->db->where('id_kamus', $id_kamus);
+
+		return $this->db->delete('kamus');
+	}
+	public function edit_kamus($in, $id)
+	{
+		$this->db->where('id_kamus', $id);
+		return $this->db->update('kamus', $in);
+	}
+
 
 }

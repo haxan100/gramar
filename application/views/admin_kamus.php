@@ -70,7 +70,7 @@
 							<a href="javascript:void(0)" data-toggle="modal" data-target="#purchaseModal" class="btn m-t-20 btn-info waves-effect waves-light btnTambah">
 								<i class="ti-plus"></i> Tambah Kata Baru
 							</a>
-							<select name="produk" id="dt_filter_produk" class="btn btn-primary m-t-20 btn-info waves-effect waves-light ">
+							<!-- <select name="produk" id="dt_filter_produk" class="btn btn-primary m-t-20 btn-info waves-effect waves-light ">
 								<option value="default" desable>Pilih Tipe Kata</option>
 								<?php
 								foreach ($listTipe as $r) {
@@ -79,7 +79,7 @@
 								';
 								}
 								?>
-							</select>
+							</select> -->
 
 							<p id="alertNotif" class="mt-2"></p>
 							<div class="container">
@@ -155,7 +155,7 @@
 						<form id="form">
 							<div class="modal-body">
 								<p id="alertNotifModal" class="mt-2"></p>
-								<input id="idkatadasat" name="idkatadasat" value="" type="hidden">
+								<input id="idkamus" name="idkamus" value="" type="hidden">
 								<div class="row ">
 									<div class="col p-4">
 										<div class="col form-group">
@@ -314,16 +314,16 @@
 
 			});
 			$('body').on('click', '.btnHapus', function() {
-				var id_katadasar = $(this).data('id_katadasar');
-				var katadasar = $(this).data('katadasar');
-				var c = confirm('Apakah anda yakin akan menghapus Produk: "' + katadasar + '" ?');
+				var id_kamus = $(this).data('id_kamus');
+				var nama_kamus = $(this).data('nama_kamus');
+				var c = confirm('Apakah anda yakin akan menghapus : "' + nama_kamus + '" ?');
 				if (c == true) {
 					$.ajax({
-						url: bu + 'admin/hapusKata',
+						url: bu + 'admin/hapusKamus',
 						dataType: 'json',
 						method: 'POST',
 						data: {
-							id_katadasar: id_katadasar
+							id_kamus: id_kamus
 						}
 					}).done(function(e) {
 						// console.log(e);
@@ -353,16 +353,18 @@
 				return false;
 			});
 			$('body').on('click', '.btnUbah', function() {
-				var id_katadasar = $(this).data('id_katadasar');
-				var katadasar = $(this).data('katadasar');
-				var tipe_katadasar = $(this).data('tipe_katadasar');
-				// console.log(id_katadasar, katadasar, tipe_katadasar);
+				var id_kamus = $(this).data('id_kamus');
+				var nama_kamus = $(this).data('nama_kamus');
+				var deskripsi_wiki = $(this).data('deskripsi_wiki');
+				var deskripsi = $(this).data('deskripsi');
+				console.log(id_kamus, nama_kamus, deskripsi_wiki, deskripsi);
+
 				$('#btnTambah').hide();
 
-
-				$('#idkatadasat').val(id_katadasar);
-				$('#idTipeProduk').val(tipe_katadasar);
-				$('#judul').val(katadasar);
+				$('#idkamus').val(id_kamus);
+				$('#deskripsi_wiki').val(deskripsi_wiki);
+				$('#kamus').val(nama_kamus);
+				$('#Deskripsi').val(deskripsi);
 
 				$('#purchaseModal').modal('show');
 
@@ -370,13 +372,14 @@
 			$('#btnEdit').on('click', function() {
 
 
-				var id_katadasar = $('#idkatadasat').val();
-				var tipe_katadasar = $('#idTipeProduk').val();
-				var katadasar = $('#judul').val();
+				var idkamus = $('#idkamus').val();
+				var deskripsi_wiki = $('#deskripsi_wiki').val();
+				var Deskripsi = $('#Deskripsi').val();
+				var nama_kamus = $('#kamus').val();
 
-				// console.log(katadasar, id_katadasar, tipe_katadasar)
+				console.log(idkamus, Deskripsi, deskripsi_wiki, nama_kamus)
 				// return false;
-				if (id_katadasar == "" || katadasar == "" || katadasar == "") {
+				if (idkamus == "" || nama_kamus == "" || deskripsi_wiki == "") {
 					Swal.fire(
 						'Eror!',
 						"Mohon Di Isi Semua!",
@@ -386,13 +389,14 @@
 
 				} else {
 					$.ajax({
-						url: bu + 'Admin/EditKata',
+						url: bu + 'Admin/EditKamus',
 						dataType: 'json',
 						method: 'POST',
 						data: {
-							katadasar: katadasar,
-							id_katadasar: id_katadasar,
-							tipe_katadasar: tipe_katadasar,
+							nama_kamus: nama_kamus,
+							idkamus: idkamus,
+							Deskripsi: Deskripsi,
+							deskripsi_wiki: deskripsi_wiki,
 						}
 					}).done(function(e) {
 						// console.log(e);
