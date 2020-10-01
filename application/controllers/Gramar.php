@@ -44,6 +44,36 @@ public function multiexplode ($delimiters,$string) {
         $value = str_replace($delimiter,"",$string);
 		return $value;
 	}
+	function strip_word_html($text, $allowed_tags = '&quot; <br><br/><br /> &quot;')
+	{
+		mb_regex_encoding('UTF-8');
+		//replace MS special characters first
+		$search = array('/&lsquo;/u', '/&rsquo;/u', '/&ldquo;/u', '/&rdquo;/u', '/&mdash;/u');
+		$replace = array('\'', '\'', '"', '"', '-');
+		$text = preg_replace($search, $replace, $text);
+		
+		if (mb_stripos($text, '/*') !== FALSE) {
+			$text = mb_eregi_replace('#/\*.*?\*/#s', '', $text, 'm');
+		}
+		
+		$text = preg_replace(array('/<([0-9]+)/'), array('< $1'), $text);
+		$text = strip_tags($text, $allowed_tags);
+		
+		$text = preg_replace(array('/^\s\s+/', '/\s\s+$/', '/\s\s+/u'), array('', '', ' '), $text);
+		//strip out inline css and simplify style tags
+		$search = array('#<(strong|b)[^>]*>(.*?)</(strong|b)>#isu', '#<(em|i)[^>]*>(.*?)</(em|i)>#isu', '#<u[^>]*>(.*?)</u>#isu');
+		$replace = array('<b>$2</b>', '<i>$2</i>', '<u>$1</u>');
+		$text = preg_replace($search, $replace, $text);
+		
+		$num_matches = preg_match_all("/\<!--/u", $text, $matches);
+		if ($num_matches) {
+			$text = preg_replace('/\<!--(.)*--\>/isu', '', $text);
+		}
+		$text = preg_replace('/(<[^>]+) style=".*?"/i', '$1', $text);
+		return $text;
+	}
+
+
 	public function type()
 	{
 		$arr = $this->KataModel->getAllKataDasar();
@@ -60,7 +90,9 @@ public function multiexplode ($delimiters,$string) {
 			$output = '';
 			$flag   = 0;
 			$input  = $_POST['input'];
-			$token  = $this->multiexplode(array(" ","\n"),$input);
+			$in = $this->strip_word_html($input);
+			$token  = $this->multiexplode(array(" ", "\n"), $in);
+			// $token  = $this->multiexplode(array(" ","\n"),$input);
 			// $arr =$this->arr(); 
 			// var_dump($arr);die;
 
