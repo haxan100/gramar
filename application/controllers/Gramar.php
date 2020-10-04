@@ -9,6 +9,10 @@ class Gramar extends CI_Controller {
     parent::__construct();
     $this->load->model('KataModel');
   }
+  public function Home()
+  {
+		redirect('/', 'refresh');
+  }
 
 public function index()
 {
@@ -36,7 +40,7 @@ public function multiexplode ($delimiters,$string) {
 	    $launch = explode($delimiters[0], $ready);
 	    return  $launch;
 }
-	public function punctuationRemovalandstopwardRemoval($string){	
+public function punctuationRemovalandstopwardRemoval($string){	
 		// var_dump($_POST);
 		// $string = $_POST['input'];
         $delimiter = array(' ','.',',','"',"'",'-
@@ -149,7 +153,7 @@ public function multiexplode ($delimiters,$string) {
 		$this->load->view('templates/footer');    
 	
 }
-	public function kamusby()
+public function kamusby()
 	{
 		$url = $this->uri->segment(3);
 
@@ -166,7 +170,7 @@ public function multiexplode ($delimiters,$string) {
 		$this->load->view('templates/footer');
 	}
 public function kamusDetail($id)
-{
+	{
 	$data['data'] = $this->KataModel->getKamusById($id)[0];
 
 	// var_dump($data);
