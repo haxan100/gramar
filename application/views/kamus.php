@@ -123,55 +123,58 @@ $url = $this->uri->segment(3);
 			</div>
 		</div>
 
+	</div>
+</div>
 
 
 
-		<script>
-			$(document).ready(function() {
-				$("#output").keydown(false);
-				$('[data-toggle="tooltip"]').tooltip();
-			});
-			foto_wrapper();
 
-			function foto_wrapper() {
-				$("#foto_wrapper").hide();
+<script>
+	$(document).ready(function() {
+		$("#output").keydown(false);
+		$('[data-toggle="tooltip"]').tooltip();
+	});
+	foto_wrapper();
 
-			}
+	function foto_wrapper() {
+		$("#foto_wrapper").hide();
 
-			$('#btnproses').on('click', function() {
-				var btn = $(this);
+	}
 
-				url = "type";
-				var data = new FormData();
-				var input = document.getElementById("input").value;
-				data.append('input', input);
-				$("#foto_wrapper").show()
-				setTimeout(
-					function() {
-						$("#foto_wrapper").hide()
+	$('#btnproses').on('click', function() {
+		var btn = $(this);
 
-						$.ajax({
-							url: url,
-							type: "POST",
-							data: data,
-							processData: false,
-							contentType: false,
-							success: function(data) {
-								$("#output").html(data).text();
-							},
-							error: function() {
-								$("#output").html('Something Error !');
-							}
-						});
+		url = "type";
+		var data = new FormData();
+		var input = document.getElementById("input").value;
+		data.append('input', input);
+		$("#foto_wrapper").show()
+		setTimeout(
+			function() {
+				$("#foto_wrapper").hide()
 
-					}, 5000);
+				$.ajax({
+					url: url,
+					type: "POST",
+					data: data,
+					processData: false,
+					contentType: false,
+					success: function(data) {
+						$("#output").html(data).text();
+					},
+					error: function() {
+						$("#output").html('Something Error !');
+					}
+				});
+
+			}, 5000);
 
 
 
-				return false;
-			});
-		</script>
+		return false;
+	});
+</script>
 
-		</body>
+</body>
 
-		</html>
+</html>

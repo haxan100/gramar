@@ -117,32 +117,35 @@
 			<div id='snhb-prepostseo_footer_sticky-0' style="margin: 0 auto !important;position:fixed;bottom:0;left:0;right:0;"></div>
 		</div>
 
-		<!--script to draw and close the unit-->
-		<script async="" type="text/javascript">
-			googletag.cmd.push(function() {
-				googletag.pubads().addEventListener('slotRenderEnded', function(event) {
-					if (event.slot.getSlotElementId() === 'snhb-prepostseo_footer_sticky-0') {
-						var elementId = event.slot.getSlotElementId();
-						if (document.getElementById(elementId).offsetHeight > 0 && event.isEmpty === false) {
-							var stickyAdHeight = document.getElementById(elementId).offsetHeight;
-							var wrapperHeight = stickyAdHeight + 25;
-							var innerWrapperHeight = stickyAdHeight + 3;
+	</div>
+</div>
 
-							document.getElementById("floorad-wrapper").setAttribute("style", "text-align:center;z-index:9999;position:fixed;left:0;right:0;display:block;bottom:0;height:" + wrapperHeight + "px;width:100%");
-							document.getElementById("close-floorad-btn").setAttribute("style", "display:inline-block;height:18px;;padding:2px;background:#fff;cursor:pointer;float:right;box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);border-radius: 8px 0 0 0;");
-							document.getElementById("sticky-ad-background").setAttribute("style", "background:#f2f7f9;height:" + innerWrapperHeight + "px;width:100%;bottom:0;position:fixed;box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);");
+<!--script to draw and close the unit-->
+<script async="" type="text/javascript">
+	googletag.cmd.push(function() {
+		googletag.pubads().addEventListener('slotRenderEnded', function(event) {
+			if (event.slot.getSlotElementId() === 'snhb-prepostseo_footer_sticky-0') {
+				var elementId = event.slot.getSlotElementId();
+				if (document.getElementById(elementId).offsetHeight > 0 && event.isEmpty === false) {
+					var stickyAdHeight = document.getElementById(elementId).offsetHeight;
+					var wrapperHeight = stickyAdHeight + 25;
+					var innerWrapperHeight = stickyAdHeight + 3;
 
-							document.getElementById('close-floorad-btn').onclick = function() {
-								document.getElementById("floorad-wrapper").setAttribute("style", "display:none;");
-								document.getElementById("close-floorad-btn").setAttribute("style", "display:none;");
-								document.getElementById("sticky-ad-background").setAttribute("style", "display:none;");
-							};
-						} else {
-							document.getElementById("floorad-wrapper").setAttribute("style", "display:none;");
-							document.getElementById("close-floorad-btn").setAttribute("style", "display:none;");
-							document.getElementById("sticky-ad-background").setAttribute("style", "display:none;");
-						}
-					}
-				});
-			});
-		</script>
+					document.getElementById("floorad-wrapper").setAttribute("style", "text-align:center;z-index:9999;position:fixed;left:0;right:0;display:block;bottom:0;height:" + wrapperHeight + "px;width:100%");
+					document.getElementById("close-floorad-btn").setAttribute("style", "display:inline-block;height:18px;;padding:2px;background:#fff;cursor:pointer;float:right;box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);border-radius: 8px 0 0 0;");
+					document.getElementById("sticky-ad-background").setAttribute("style", "background:#f2f7f9;height:" + innerWrapperHeight + "px;width:100%;bottom:0;position:fixed;box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);");
+
+					document.getElementById('close-floorad-btn').onclick = function() {
+						document.getElementById("floorad-wrapper").setAttribute("style", "display:none;");
+						document.getElementById("close-floorad-btn").setAttribute("style", "display:none;");
+						document.getElementById("sticky-ad-background").setAttribute("style", "display:none;");
+					};
+				} else {
+					document.getElementById("floorad-wrapper").setAttribute("style", "display:none;");
+					document.getElementById("close-floorad-btn").setAttribute("style", "display:none;");
+					document.getElementById("sticky-ad-background").setAttribute("style", "display:none;");
+				}
+			}
+		});
+	});
+</script>

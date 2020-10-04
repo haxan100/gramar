@@ -16,7 +16,8 @@ public function index()
 		$this->load->view('templates/header',$data);
 		$this->load->view('templates/navbar');
 		$this->load->view('templates/menu');
-		$this->load->view('templates/footer');                
+		$this->load->view('templates/footer');    
+         
 }
  public function typo()
 {
