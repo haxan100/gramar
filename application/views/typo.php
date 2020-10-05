@@ -887,7 +887,7 @@
 
 			}
 			function goToByScroll(id){
-				$('html,body').animate({scrollTop: $("#"+id).offset().top - 20},'fast');
+				$('html,body').animate({scrollTop: $("#"+id).offset().top - 20},'slow');
 
 			}
 
@@ -924,13 +924,13 @@
 								// $("#output").html(data).text();
 								// $('#output').summernote('pasteHTML', data);
 
-							$('#output').summernote('pasteHTML', data)
-							goToByScroll('output');
-								// $('html, body').animate({
-								// 	scrollDown: $('#output').summernote('pasteHTML', data).offset().down
+							// $('#output').summernote('pasteHTML', data)
+							// goToByScroll('output');
+								$('html, body').animate({
+									scrollDown: $('#output').summernote('pasteHTML', data).offset().down
 
 
-								// }, 'slow');
+								}, 'slow');
 
 
 								// $("#output").append("<b>Appended text</br>");
