@@ -839,6 +839,12 @@
 								</div>
 							</div>
 						</div>
+					<div class="char__containerss" id="animasi">
+							<div class="ft-recharge-unify__chip" style="text-align: center;">
+									<img class="img-fluid" src="<?= base_url(); ?>assets/images/animation.gif" alt="">
+							</div>
+						</div>
+
 						<div class="char__containerss">
 							<div class="ft-recharge-unify__chip">
 									<h3>OUTPUT</h3>
@@ -889,6 +895,7 @@
 
 			<script>
 				$(document).ready(function() {
+					$('#animasi').hide();
 
 					$('#btnProsesLagi').hide()
 
@@ -988,6 +995,8 @@
 				});
 
 				$('#btnproses').on('click', function() {
+							$('#animasi').show();
+
 					kosong();
 					$("#output").summernote("reset");
 					// $('#output').summernote('pasteHTML', "");
@@ -1001,6 +1010,7 @@
 					setTimeout(
 						function() {
 							$("#foto_wrapper").hide()
+							$('#animasi').show();
 
 							$.ajax({
 								url: url,
@@ -1010,6 +1020,8 @@
 								contentType: false,
 								success: function(data) {
 									$('#btnProsesLagi').show()
+									$('#animasi').hide();
+
 
 									// $("#output").html(data).text();
 									// $('#output').summernote('pasteHTML', data);
@@ -1018,6 +1030,8 @@
 									// goToByScroll('output');
 									$('html, body').animate({
 										scrollDown: $('#output').summernote('pasteHTML', data).offset().down
+									// $('#animasi').hide()
+
 
 
 									}, 'slow');
@@ -1050,6 +1064,8 @@
 					$("#foto_wrapper").show()
 					setTimeout(
 						function() {
+							$('#animasi').show();
+
 							$("#foto_wrapper").hide()
 
 							$.ajax({
@@ -1060,6 +1076,7 @@
 								contentType: false,
 								success: function(data) {
 									$("#output").summernote("reset");
+								$('#animasi').hide();
 
 									$('#btnProsesLagi').show()
 
