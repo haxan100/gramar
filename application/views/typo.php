@@ -782,16 +782,14 @@
 								<div id="output">
 
 								</div>
+						
 
 							</div>
-
+							<button id="btnProsesLagi" type="button" class="btn btn-primary btn-block">Cek Lagi</button>
 
 
 							<!-- <textarea id="output" name="output" class="form-control vertical" rows="5"></textarea> -->
 						</div>
-
-
-					</div>
 
 
 
@@ -804,6 +802,9 @@
 
 		<script>
 			$(document).ready(function() {
+
+				$('#btnProsesLagi').hide()
+
 				$('#input').summernote({
 					addclass: {
 						debug: false,
@@ -885,6 +886,10 @@
 				$('#output').summernote('pasteHTML', o);
 
 			}
+			function goToByScroll(id){
+				$('html,body').animate({scrollTop: $("#"+id).offset().top - 20},'fast');
+
+			}
 
 			$("#input").on("summernote.enter", function(we, e) {
 				console.log(e)
@@ -914,17 +919,66 @@
 							processData: false,
 							contentType: false,
 							success: function(data) {
+								$('#btnProsesLagi').show()
+
 								// $("#output").html(data).text();
 								// $('#output').summernote('pasteHTML', data);
 
+							$('#output').summernote('pasteHTML', data)
+							goToByScroll('output');
+								// $('html, body').animate({
+								// 	scrollDown: $('#output').summernote('pasteHTML', data).offset().down
+
+
+								// }, 'slow');
+
+
+								// $("#output").append("<b>Appended text</br>");
+							},
+							error: function() {
+								$("#output").html('Something Error !');
+							}
+						});
+
+					}, 1000);
+
+
+
+				return false;
+			});
+
+			$('#btnProsesLagi').on('click', function() {
+				// kosong();
+				// $('#output').summernote('pasteHTML', "");
+				var btn = $(this);
+				url = "type";
+				var data = new FormData();
+				var input = $('#output').summernote('code');
+				console.log(input);
+				// return false;
+				data.append('input', input);
+				$("#foto_wrapper").show()
+				setTimeout(
+					function() {
+						$("#foto_wrapper").hide()
+
+						$.ajax({
+							url: url,
+							type: "POST",
+							data: data,
+							processData: false,
+							contentType: false,
+							success: function(data) {
+								$("#output").summernote("reset");
+
+								$('#btnProsesLagi').show()
 
 								$('html, body').animate({
 									// scrollTop: $('#output').offset().down
 									scrollTop: $('#output').summernote('pasteHTML', data).offset().down
 
-								}, 'slow');
 
-								// $("#output").append("<b>Appended text</br>");
+								}, 'slow');
 							},
 							error: function() {
 								$("#output").html('Something Error !');
