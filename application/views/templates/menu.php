@@ -45,12 +45,10 @@
 				</script>-->
 
 			</div>
-			<div class="col-md-12 noP fts clear">
-				<div class="col-md-12 sib">
-					<a href="">
-						Space Iklan
-					</a>
-				</div>
+			<div class="col-md-12 sib">
+				<a href="">
+					Space Iklan
+				</a>
 			</div>
 
 			<script>
@@ -60,12 +58,26 @@
 			<div class="col-md-6 sib">
 				<a href="<?= base_url(); ?>Gramar/typo">
 					<i class="fa fa-clone"></i>
-					Cek Kata Dasar
+					Cek Typo
 				</a>
 			</div>
 			<div class="col-md-6 sib">
 				<a href="<?= base_url(); ?>Gramar/kamusby/a">
-					<i class="fa fa-image"></i> Kamus Arti
+					<i class="fa fa-image"></i> Kamus
+				</a>
+			</div>
+		</div>
+
+		<div class="col-md-12 noP fts clear">
+			<div class="col-md-6 sib">
+				<a href="<?= base_url(); ?>Gramar/typo">
+					<i class="fa fa-clone"></i>
+					IKLAN
+				</a>
+			</div>
+			<div class="col-md-6 sib">
+				<a href="<?= base_url(); ?>Gramar/kamusby/a">
+					<i class="fa fa-image"></i> IKLAN
 				</a>
 			</div>
 		</div>
@@ -76,49 +88,6 @@
 
 </div>
 
-<div class="container-fluid white-section">
-	<div class="container noP">
-
-		<div class="col-md-12 noP">
-			<div class="leftcol noP">
-
-				<div class="col-md-12 tln noP clear" id="domainTools">
-
-				</div>
-
-				<div class="col-md-12 tln noP clear" id="webManage">
-
-				</div>
-				<div class="col-md-12 tln noP clear" id="webManage">
-
-				</div>
-				<div class="col-xs-12 text-center" style="margin:10px 0 20px 0;">
-					<!-- <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
-					<script src="<?= base_url(); ?>assets\js\adsbygoogle.js"></script>
-
-					<!-- desktop 300x250 -->
-					<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-7155931151667823" data-ad-slot="6131269984"></ins>
-					<script>
-						(adsbygoogle = window.adsbygoogle || []).push({});
-					</script>
-				</div>
-			</div>
-			<div class="rightcol sBarN">
-
-				<div class="col-xs-12 text-center clear noP pps-spr pps-spr-choras-daba pps-spr-sidebar" style="margin:10px 0;">
-				</div>
-			</div>
-		</div>
-
-
-		<div id='floorad-wrapper'>
-			<a id='close-floorad-btn' style="display: none;">&#10006;</a>
-			<div id='sticky-ad-background'></div>
-			<div id='snhb-prepostseo_footer_sticky-0' style="margin: 0 auto !important;position:fixed;bottom:0;left:0;right:0;"></div>
-		</div>
-
-	</div>
-</div>
 
 <!--script to draw and close the unit-->
 <script async="" type="text/javascript">

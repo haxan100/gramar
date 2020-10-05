@@ -96,18 +96,32 @@
 		.sib {
 			padding: 3px
 		}
-
+/* 
 		.sib a {
+			height: 12em !important;
 			border: 1px solid #fff;
 			border-radius: 10px;
 			color: #fff;
 			text-align: center;
 			display: block;
-			padding: 30px 2px;
+			padding: 64px 20px;
 			transition: ease-in-out .15s all;
 			transform: scale(0.95);
 			box-sizing: border-box
-		}
+		} */
+		.sib a {
+		    /* font-size: 22px; */
+		    height: 12em !important;
+		    border: 1px solid #fff;
+		    border-radius: 10px;
+		    color: #fff;
+		    text-align: center;
+		    display: block;
+		    padding: 100px 20px;
+		    transition: ease-in-out .15s all;
+		    transform: scale(0.95);
+		    box-sizing: border-box;
+		    }
 
 		.sib a:hover {
 			transform: scale(1);
