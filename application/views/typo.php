@@ -3,6 +3,15 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 <link href="<?= base_url(); ?>assets\style\stylekamus.css" rel="stylesheet">
 <style>
+.keyword__container_iklan {
+	height: 538px;
+    position: relative;
+    padding: 32px 24px;
+    background-color: #37977b;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
 	.bege {
 		background: linear-gradient(-145deg, #3ACD99, #0796B6) !important;
 	}
@@ -160,6 +169,15 @@
 	}
 
 	@media only screen and (max-width: 600px) {
+	.keyword__container_iklan {
+		height: 58px;
+		position: relative;
+		padding: 32px 24px;
+		background-color: #37977b;
+		border-radius: 8px;
+		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+		z-index: 1;
+	}
 		#foto_wrapper {
 			max-width: 20%;
 			margin-top: -52%;
@@ -735,6 +753,39 @@
 		margin: 0 0 24px;
 		font-size: 30px;
 	}
+@media only screen and (max-width: 660px) {
+	.keyword__container_iklan {
+		height: 58px;
+		position: relative;
+		padding: 32px 24px;
+		background-color: #37977b;
+		border-radius: 8px;
+		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+		z-index: 1;
+	}
+	}
+	@media only screen and (max-width: 580px) {
+	.keyword__container_iklan {
+		height: 58px;
+		position: relative;
+		padding: 32px 24px;
+		background-color:#37977b;
+		border-radius: 8px;
+		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+		z-index: 1;
+	}
+	}
+		@media only screen and (max-width: 500px) and (max-width: 877px) {
+	.keyword__container_iklan {
+		height: 58px;
+		position: relative;
+		padding: 32px 24px;
+		background-color:#1e9390;
+		border-radius: 8px;
+		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+		z-index: 1;
+	}
+	}
 </style>
 <div class="loadeng">
 	<p>
@@ -755,244 +806,283 @@
 						<div class="char__containerss">
 							<div class="ft-recharge-unify__chip">
 								<h1 class="title text-center">Cek Typo Online</h1>
+									<h3>INPUT</h3>
 							</div>
-
-
-
 						</div>
 
+						<div class="row">
+							<div class="col-md-2 " style="
+									margin-bottom: 3%;
+								">
 
-						<div class="col-md-12">
-
-							<h3>INPUT</h3>
-							<div class="keyword__container">
-								<textarea id="input" name="input" class="form-control vertical" rows="15"></textarea>
-								<br>
-
+								<div class="keyword__container_iklan">
+								<p>Iklan</p>
+								</div>
 							</div>
 
+							<div class="col-md-8">
 
+							
 
-							<button id="btnproses" type="button" class="btn btn-primary btn-block">PROSES</button>
-						</div>
-						<div class="col-md-12">
-							<h3>OUTPUT</h3>
-							<div class="keyword__containers">
-
-								<div id="output">
+								<div class="keyword__container">
+									<textarea id="input" name="input" class="form-control vertical" rows="15"></textarea>
+									<br>
 
 								</div>
-						
 
+
+								<button id="btnproses" type="button" class="btn btn-primary btn-block">PROSES</button>
 							</div>
-							<button id="btnProsesLagi" type="button" class="btn btn-primary btn-block">Cek Lagi</button>
-
-
-							<!-- <textarea id="output" name="output" class="form-control vertical" rows="5"></textarea> -->
+							<div class="col-md-2">
+								<div class="keyword__container_iklan">
+								<p>Iklan</p>
+								</div>
+							</div>
+						</div>
+						<div class="char__containerss">
+							<div class="ft-recharge-unify__chip">
+									<h3>OUTPUT</h3>
+							</div>
 						</div>
 
+						<div class="row">
+							<div class="col-md-2">
+								<div class="keyword__container_iklan ">
+								<p>Iklan</p>
+								</div>
+							</div>
 
+
+							<div class="col-md-8">
+								<!-- <h3></h3> -->
+								<div class="keyword__containers">
+
+									<div id="output">
+
+									</div>
+
+
+								</div>
+								<button id="btnProsesLagi" type="button" class="btn btn-primary btn-block">Cek Lagi</button>
+
+
+								<!-- <textarea id="output" name="output" class="form-control vertical" rows="5"></textarea> -->
+							</div>
+
+							<div class="col-md-2">
+								<div class="keyword__container_iklan">
+								<p>Iklan</p>
+								</div>
+							</div>
+
+
+
+
+
+					</div>
 
 				</div>
-
 			</div>
-		</div>
+			</div>
 
 
 
-		<script>
-			$(document).ready(function() {
+			<script>
+				$(document).ready(function() {
 
-				$('#btnProsesLagi').hide()
+					$('#btnProsesLagi').hide()
 
-				$('#input').summernote({
-					addclass: {
-						debug: false,
-						classTags: [{
-							title: "Button",
-							value: "btn btn-success"
-						}, "jumbotron", "lead", "img-rounded", "img-circle", "img-responsive", "btn", "btn btn-success", "btn btn-danger", "text-muted", "text-primary", "text-warning", "text-danger", "text-success", "table-bordered", "table-responsive", "alert", "alert alert-success", "alert alert-info", "alert alert-warning", "alert alert-danger", "visible-sm", "hidden-xs", "hidden-md", "hidden-lg", "hidden-print"]
-					},
-					height: 300,
-					toolbar: [
+					$('#input').summernote({
+						addclass: {
+							debug: false,
+							classTags: [{
+								title: "Button",
+								value: "btn btn-success"
+							}, "jumbotron", "lead", "img-rounded", "img-circle", "img-responsive", "btn", "btn btn-success", "btn btn-danger", "text-muted", "text-primary", "text-warning", "text-danger", "text-success", "table-bordered", "table-responsive", "alert", "alert alert-success", "alert alert-info", "alert alert-warning", "alert alert-danger", "visible-sm", "hidden-xs", "hidden-md", "hidden-lg", "hidden-print"]
+						},
+						height: 300,
+						toolbar: [
 
-						['view', ['codeview']],
-					],
-				});
-				$('#output').summernote({
-					addclass: {
-						debug: false,
-						classTags: [{
-							title: "Button",
-							value: "btn btn-success"
-						}, "jumbotron", "lead", "img-rounded", "img-circle", "img-responsive", "btn", "btn btn-success", "btn btn-danger", "text-muted", "text-primary", "text-warning", "text-danger", "text-success", "table-bordered", "table-responsive", "alert", "alert alert-success", "alert alert-info", "alert alert-warning", "alert alert-danger", "visible-sm", "hidden-xs", "hidden-md", "hidden-lg", "hidden-print"]
-					},
-					height: 300,
-					toolbar: [
+							['view', ['codeview']],
+						],
+					});
+					$('#output').summernote({
+						addclass: {
+							debug: false,
+							classTags: [{
+								title: "Button",
+								value: "btn btn-success"
+							}, "jumbotron", "lead", "img-rounded", "img-circle", "img-responsive", "btn", "btn btn-success", "btn btn-danger", "text-muted", "text-primary", "text-warning", "text-danger", "text-success", "table-bordered", "table-responsive", "alert", "alert alert-success", "alert alert-info", "alert alert-warning", "alert alert-danger", "visible-sm", "hidden-xs", "hidden-md", "hidden-lg", "hidden-print"]
+						},
+						height: 300,
+						toolbar: [
 
-						['view', ['codeview']],
-					],
-				});
+							['view', ['codeview']],
+						],
+					});
 
-				function getCaret(el) {
-					if (el.selectionStart) {
-						return el.selectionStart;
-					} else if (document.selection) {
-						el.focus();
+					function getCaret(el) {
+						if (el.selectionStart) {
+							return el.selectionStart;
+						} else if (document.selection) {
+							el.focus();
 
-						var r = document.selection.createRange();
-						if (r == null) {
-							return 0;
+							var r = document.selection.createRange();
+							if (r == null) {
+								return 0;
+							}
+
+							var re = el.createTextRange(),
+								rc = re.duplicate();
+							re.moveToBookmark(r.getBookmark());
+							rc.setEndPoint('EndToStart', re);
+
+							return rc.text.length;
+						}
+						return 0;
+					}
+
+
+					$('#input').keyup(function(e) {
+						console.log(e)
+
+						if (e.keyCode == 13) {
+							var curr = getCaret(this);
+							var val = $(this).val();
+							var end = val.length;
+
+							$(this).val(val.substr(0, curr) + '<br>' + val.substr(curr, end));
 						}
 
-						var re = el.createTextRange(),
-							rc = re.duplicate();
-						re.moveToBookmark(r.getBookmark());
-						rc.setEndPoint('EndToStart', re);
+					})
 
-						return rc.text.length;
-					}
-					return 0;
+
+					$("#output").keydown(false);
+					$('[data-toggle="tooltip"]').tooltip();
+				});
+				foto_wrapper();
+
+				function foto_wrapper() {
+					$("#foto_wrapper").hide();
+
 				}
 
+				function kosong() {
+					// $("#foto_wrapper").hide();
+					var o = "<br>	";
+					$('#output').summernote('pasteHTML', o);
 
-				$('#input').keyup(function(e) {
+				}
+
+				function goToByScroll(id) {
+					$('html,body').animate({
+						scrollTop: $("#" + id).offset().top - 20
+					}, 'slow');
+
+				}
+
+				$("#input").on("summernote.enter", function(we, e) {
 					console.log(e)
+					$(this).summernote("pasteHTML", "<br><br>");
+					e.preventDefault();
+				});
 
-					if (e.keyCode == 13) {
-						var curr = getCaret(this);
-						var val = $(this).val();
-						var end = val.length;
+				$('#btnproses').on('click', function() {
+					kosong();
+					$("#output").summernote("reset");
+					// $('#output').summernote('pasteHTML', "");
+					var btn = $(this);
 
-						$(this).val(val.substr(0, curr) + '<br>' + val.substr(curr, end));
-					}
+					url = "type";
+					var data = new FormData();
+					var input = document.getElementById("input").value;
+					data.append('input', input);
+					$("#foto_wrapper").show()
+					setTimeout(
+						function() {
+							$("#foto_wrapper").hide()
 
-				})
+							$.ajax({
+								url: url,
+								type: "POST",
+								data: data,
+								processData: false,
+								contentType: false,
+								success: function(data) {
+									$('#btnProsesLagi').show()
 
+									// $("#output").html(data).text();
+									// $('#output').summernote('pasteHTML', data);
 
-				$("#output").keydown(false);
-				$('[data-toggle="tooltip"]').tooltip();
-			});
-			foto_wrapper();
-
-			function foto_wrapper() {
-				$("#foto_wrapper").hide();
-
-			}
-
-			function kosong() {
-				// $("#foto_wrapper").hide();
-				var o = "<br>	";
-				$('#output').summernote('pasteHTML', o);
-
-			}
-			function goToByScroll(id){
-				$('html,body').animate({scrollTop: $("#"+id).offset().top - 20},'slow');
-
-			}
-
-			$("#input").on("summernote.enter", function(we, e) {
-				console.log(e)
-				$(this).summernote("pasteHTML", "<br><br>");
-				e.preventDefault();
-			});
-
-			$('#btnproses').on('click', function() {
-				kosong();
-				$("#output").summernote("reset");
-				// $('#output').summernote('pasteHTML', "");
-				var btn = $(this);
-
-				url = "type";
-				var data = new FormData();
-				var input = document.getElementById("input").value;
-				data.append('input', input);
-				$("#foto_wrapper").show()
-				setTimeout(
-					function() {
-						$("#foto_wrapper").hide()
-
-						$.ajax({
-							url: url,
-							type: "POST",
-							data: data,
-							processData: false,
-							contentType: false,
-							success: function(data) {
-								$('#btnProsesLagi').show()
-
-								// $("#output").html(data).text();
-								// $('#output').summernote('pasteHTML', data);
-
-							// $('#output').summernote('pasteHTML', data)
-							// goToByScroll('output');
-								$('html, body').animate({
-									scrollDown: $('#output').summernote('pasteHTML', data).offset().down
+									// $('#output').summernote('pasteHTML', data)
+									// goToByScroll('output');
+									$('html, body').animate({
+										scrollDown: $('#output').summernote('pasteHTML', data).offset().down
 
 
-								}, 'slow');
+									}, 'slow');
 
 
-								// $("#output").append("<b>Appended text</br>");
-							},
-							error: function() {
-								$("#output").html('Something Error !');
-							}
-						});
+									// $("#output").append("<b>Appended text</br>");
+								},
+								error: function() {
+									$("#output").html('Something Error !');
+								}
+							});
 
-					}, 1000);
+						}, 1000);
 
 
 
-				return false;
-			});
+					return false;
+				});
 
-			$('#btnProsesLagi').on('click', function() {
-				// kosong();
-				// $('#output').summernote('pasteHTML', "");
-				var btn = $(this);
-				url = "type";
-				var data = new FormData();
-				var input = $('#output').summernote('code');
-				console.log(input);
-				// return false;
-				data.append('input', input);
-				$("#foto_wrapper").show()
-				setTimeout(
-					function() {
-						$("#foto_wrapper").hide()
+				$('#btnProsesLagi').on('click', function() {
+					// kosong();
+					// $('#output').summernote('pasteHTML', "");
+					var btn = $(this);
+					url = "type";
+					var data = new FormData();
+					var input = $('#output').summernote('code');
+					console.log(input);
+					// return false;
+					data.append('input', input);
+					$("#foto_wrapper").show()
+					setTimeout(
+						function() {
+							$("#foto_wrapper").hide()
 
-						$.ajax({
-							url: url,
-							type: "POST",
-							data: data,
-							processData: false,
-							contentType: false,
-							success: function(data) {
-								$("#output").summernote("reset");
+							$.ajax({
+								url: url,
+								type: "POST",
+								data: data,
+								processData: false,
+								contentType: false,
+								success: function(data) {
+									$("#output").summernote("reset");
 
-								$('#btnProsesLagi').show()
+									$('#btnProsesLagi').show()
 
-								$('html, body').animate({
-									// scrollTop: $('#output').offset().down
-									scrollTop: $('#output').summernote('pasteHTML', data).offset().down
-
-
-								}, 'slow');
-							},
-							error: function() {
-								$("#output").html('Something Error !');
-							}
-						});
-
-					}, 1000);
+									$('html, body').animate({
+										// scrollTop: $('#output').offset().down
+										scrollTop: $('#output').summernote('pasteHTML', data).offset().down
 
 
+									}, 'slow');
+								},
+								error: function() {
+									$("#output").html('Something Error !');
+								}
+							});
 
-				return false;
-			});
-		</script>
+						}, 1000);
 
-		</body>
 
-		</html>
+
+					return false;
+				});
+			</script>
+
+			</body>
+
+			</html>
