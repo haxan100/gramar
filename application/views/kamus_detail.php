@@ -1,8 +1,67 @@
 <!-- HEADER -->
 <style>
-	.bege {
-		background: linear-gradient(-145deg, #3ACD99, #0796B6) !important;
+	.keyword__container_iklan {
+		/* height: 538px; */
+		position: relative;
+		padding: 32px 24px;
+		background-color: #37977b;
+		border-radius: 8px;
+		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+		z-index: 1;
 	}
+		@media only screen and (max-width: 600px) {
+		.keyword__container_iklan {
+			/* height: 58px; */
+			position: relative;
+			padding: 32px 24px;
+			background-color: #37977b;
+			border-radius: 8px;
+			box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+			z-index: 1;
+		}
+			#foto_wrapper {
+				max-width: 20%;
+				margin-top: -52%;
+				max-height: 23%;
+				z-index: 2;
+			}
+		}
+		@media only screen and (max-width: 660px) {
+		.keyword__container_iklan {
+			/* height: 58px; */
+			position: relative;
+			padding: 32px 24px;
+			background-color: #37977b;
+			border-radius: 8px;
+			box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+			z-index: 1;
+		}
+		}
+		@media only screen and (max-width: 580px) {
+		.keyword__container_iklan {
+			/* height: 58px; */
+			position: relative;
+			padding: 32px 24px;
+			background-color:#37977b;
+			border-radius: 8px;
+			box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+			z-index: 1;
+		}
+		}
+			@media only screen and (max-width: 500px) and (max-width: 877px) {
+		.keyword__container_iklan {
+			/* height: 58px; */
+			position: relative;
+			padding: 32px 24px;
+			background-color:#1e9390;
+			border-radius: 8px;
+			box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+			z-index: 1;
+		}
+		}
+		.bege {
+			background: linear-gradient(-145deg, #3ACD99, #0796B6) !important;
+		}
 
 	ul {
 		display: block;
@@ -745,7 +804,14 @@ $url = $this->uri->segment(3);
 
 				</div>
 				<div class="col-md-12">
-					<div class="container">
+
+					<div class="col-md-2">
+						<div class="keyword__container_iklan">
+						<p>Iklan</p>
+						</div>
+					</div>
+
+					<div class="col-md-8">
 
 
 						<div class="keyword__container">
@@ -766,8 +832,14 @@ $url = $this->uri->segment(3);
 						</div>
 
 					</div>
+				
+					<div class="col-md-2">
+						<div class="keyword__container_iklan">
+						<p>Iklan</p>
+						</div>
+					</div>
 
-
+					
 
 					<div>
 
