@@ -320,7 +320,7 @@
 	}
 
 	.keyword__container {
-		margin-bottom: 3%;
+		margin-bottom: 8%;
 		position: relative;
 		padding: 32px 24px;
 		background-color: #FFFFFF;
@@ -830,7 +830,7 @@
 						<div class="char__containerss">
 							<div class="ft-recharge-unify__chip">
 								<h1 class="title text-center">Cek Typo Online</h1>
-								<h3>INPUT</h3>
+								<h3 id="fokusI">INPUT</h3>
 							</div>
 						</div>
 
@@ -877,7 +877,7 @@
 
 						<div class="row">
 							<div class="col-md-2">
-								<div class="keyword__container_iklan ">
+								<div class="keyword__container_iklan " id="iklanOutput">
 									<p>Iklan</p>
 								</div>
 							</div>
@@ -936,7 +936,7 @@
 					$('#animasi').hide();
 					$('#animasi').prepend('<img id="theImg"src="<?= base_url(); ?>assets/images/animation.gif" />')
 
-					$('#btnProsesLagi').hide()
+					// $('#btnProsesLagi').hide()
 
 					$('#input').summernote({
 						addclass: {
@@ -967,26 +967,26 @@
 						],
 					});
 
-					function getCaret(el) {
-						if (el.selectionStart) {
-							return el.selectionStart;
-						} else if (document.selection) {
-							el.focus();
+					// function getCaret(el) {
+					// 	if (el.selectionStart) {
+					// 		return el.selectionStart;
+					// 	} else if (document.selection) {
+					// 		el.focus();
 
-							var r = document.selection.createRange();
-							if (r == null) {
-								return 0;
-							}
+					// 		var r = document.selection.createRange();
+					// 		if (r == null) {
+					// 			return 0;
+					// 		}
 
-							var re = el.createTextRange(),
-								rc = re.duplicate();
-							re.moveToBookmark(r.getBookmark());
-							rc.setEndPoint('EndToStart', re);
+					// 		var re = el.createTextRange(),
+					// 			rc = re.duplicate();
+					// 		re.moveToBookmark(r.getBookmark());
+					// 		rc.setEndPoint('EndToStart', re);
 
-							return rc.text.length;
-						}
-						return 0;
-					}
+					// 		return rc.text.length;
+					// 	}
+					// 	return 0;
+					// }
 
 
 					$('#input').keyup(function(e) {
@@ -1019,6 +1019,8 @@
 					$('#output').summernote('pasteHTML', o);
 
 				}
+				// $("#fokusI").focus();
+
 
 				function goToByScroll(id) {
 					$('html,body').animate({
@@ -1033,14 +1035,12 @@
 					e.preventDefault();
 				});
 
-				$('#btnproses').on('click', function() {
-					$('#animasi').show();
-
+				$('#btnproses').on('click', function() {					
 					kosong();
 					$("#output").summernote("reset");
 					// $('#output').summernote('pasteHTML', "");
 					var btn = $(this);
-
+					$('#animasi').show();
 					url = "type";
 					var data = new FormData();
 					var input = document.getElementById("input").value;
@@ -1061,22 +1061,11 @@
 									$('#btnProsesLagi').show()
 									$('#animasi').hide();
 
+									$('#output').summernote('pasteHTML', data)
+											$([document.documentElement, document.body]).animate({
+												scrollTop: $("#iklanOutput").offset().top
+											}, 200);
 
-									// $("#output").html(data).text();
-									// $('#output').summernote('pasteHTML', data);
-
-									// $('#output').summernote('pasteHTML', data)
-									// goToByScroll('output');
-									$('html, body').animate({
-										scrollDown: $('#output').summernote('pasteHTML', data).offset().down
-										// $('#animasi').hide()
-
-
-
-									}, 'slow');
-
-
-									// $("#output").append("<b>Appended text</br>");
 								},
 								error: function() {
 									$("#output").html('Something Error !');
@@ -1084,60 +1073,29 @@
 							});
 
 						}, 1000);
-
-
 
 					return false;
 				});
+				function FokusAtas() {
+					$([document.documentElement, document.body]).animate({
+						scrollTop: $("#fokusI").offset().top
+					}, 200);
+				  }
+				// function FokusHasil() {
+				// 	$([document.documentElement, document.body]).animate({
+				// 		scrollTop: $("#output").offset().top
+				// 	}, 200);
+				//   }
+
+				FokusAtas();
+				// FokusHasil();
+
 
 				$('#btnProsesLagi').on('click', function() {
-
 					location.reload();
-					// kosong();
-					// $('#output').summernote('pasteHTML', "");
-					var btn = $(this);
-					url = "type";
-					var data = new FormData();
-					var input = $('#output').summernote('code');
-					console.log(input);
-					// return false;
-					data.append('input', input);
-					$("#foto_wrapper").show()
-					setTimeout(
-						function() {
-							$('#animasi').show();
-
-							$("#foto_wrapper").hide()
-
-							$.ajax({
-								url: url,
-								type: "POST",
-								data: data,
-								processData: false,
-								contentType: false,
-								success: function(data) {
-									$("#output").summernote("reset");
-									$('#animasi').hide();
-
-									$('#btnProsesLagi').show()
-
-									$('html, body').animate({
-										// scrollTop: $('#output').offset().down
-										scrollTop: $('#output').summernote('pasteHTML', data).offset().down
-
-
-									}, 'slow');
-								},
-								error: function() {
-									$("#output").html('Something Error !');
-								}
-							});
-
-						}, 1000);
-
-
-
-					return false;
+				// FokusAtas();
+			
+					console.log('r3r');
 				});
 			</script>
 
