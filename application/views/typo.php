@@ -793,6 +793,10 @@
 
 	@media only screen and (max-width: 500px) and (max-width: 877px) {
 		.keyword__container_iklan {
+			margin-right: 8%;
+			margin-left: 8%;
+			/* margin-top: 8%;
+			margin-bottom: 8%; */
 			height: 58px;
 			position: relative;
 			padding: 32px 24px;
@@ -932,7 +936,7 @@
 					$('#animasi').hide();
 					$('#animasi').prepend('<img id="theImg"src="<?= base_url(); ?>assets/images/animation.gif" />')
 
-					// $('#btnProsesLagi').hide()
+					$('#btnProsesLagi').hide()
 
 					$('#input').summernote({
 						addclass: {
