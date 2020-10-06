@@ -3,6 +3,16 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 <link href="<?= base_url(); ?>assets\style\stylekamus.css" rel="stylesheet">
 <style>
+	.keyword__container_footer {
+		/* height: 538px; */
+		position: relative;
+		padding: 32px 24px;
+		background-color: #d9e0e1;
+		border-radius: 8px;
+		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+		z-index: 1;
+	}
+
 	.keyword__container_iklan {
 		height: 538px;
 		position: relative;
@@ -895,7 +905,19 @@
 
 
 						</div>
+						<!-- <div class="row"> -->
+						<!-- </div> -->
 
+					</div>
+				</div>
+				<div class="col-lg-12">
+					<div class="keyword__container_footer ">
+						<div class="card text-center">
+							<div class="card-body">
+								<h5 class="card-title">Lorem Ipsum</h5>
+								<p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore aspernatur voluptatum suscipit perferendis optio aliquam, dolorum recusandae officiis delectus nihil quidem consequatur ducimus! Perspiciatis quos fugit nemo eum reprehenderit natus!</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -905,9 +927,9 @@
 			<script>
 				$(document).ready(function() {
 
-	
-						$('#animasi').hide();
-						$('#animasi').prepend('<img id="theImg"src="<?= base_url(); ?>assets/images/animation.gif" />')
+
+					$('#animasi').hide();
+					$('#animasi').prepend('<img id="theImg"src="<?= base_url(); ?>assets/images/animation.gif" />')
 
 					$('#btnProsesLagi').hide()
 
