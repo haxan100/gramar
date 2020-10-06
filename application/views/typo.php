@@ -320,6 +320,7 @@
 	}
 
 	.keyword__container {
+		margin-bottom: 3%;
 		position: relative;
 		padding: 32px 24px;
 		background-color: #FFFFFF;
@@ -849,8 +850,8 @@
 
 								</div>
 
-
 								<button id="btnproses" type="button" class="btn btn-primary btn-block">PROSES</button>
+
 							</div>
 							<div class="col-md-2">
 								<div class="keyword__container_iklan">
@@ -931,7 +932,7 @@
 					$('#animasi').hide();
 					$('#animasi').prepend('<img id="theImg"src="<?= base_url(); ?>assets/images/animation.gif" />')
 
-					$('#btnProsesLagi').hide()
+					// $('#btnProsesLagi').hide()
 
 					$('#input').summernote({
 						addclass: {
@@ -1086,6 +1087,8 @@
 				});
 
 				$('#btnProsesLagi').on('click', function() {
+
+					location.reload();
 					// kosong();
 					// $('#output').summernote('pasteHTML', "");
 					var btn = $(this);
