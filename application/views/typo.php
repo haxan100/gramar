@@ -3,15 +3,16 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 <link href="<?= base_url(); ?>assets\style\stylekamus.css" rel="stylesheet">
 <style>
-.keyword__container_iklan {
-	height: 538px;
-    position: relative;
-    padding: 32px 24px;
-    background-color: #37977b;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
-    z-index: 1;
-}
+	.keyword__container_iklan {
+		height: 538px;
+		position: relative;
+		padding: 32px 24px;
+		background-color: #37977b;
+		border-radius: 8px;
+		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+		z-index: 1;
+	}
+
 	.bege {
 		background: linear-gradient(-145deg, #3ACD99, #0796B6) !important;
 	}
@@ -169,15 +170,16 @@
 	}
 
 	@media only screen and (max-width: 600px) {
-	.keyword__container_iklan {
-		height: 58px;
-		position: relative;
-		padding: 32px 24px;
-		background-color: #37977b;
-		border-radius: 8px;
-		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
-		z-index: 1;
-	}
+		.keyword__container_iklan {
+			height: 58px;
+			position: relative;
+			padding: 32px 24px;
+			background-color: #37977b;
+			border-radius: 8px;
+			box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+			z-index: 1;
+		}
+
 		#foto_wrapper {
 			max-width: 20%;
 			margin-top: -52%;
@@ -753,38 +755,45 @@
 		margin: 0 0 24px;
 		font-size: 30px;
 	}
-@media only screen and (max-width: 660px) {
-	.keyword__container_iklan {
-		height: 58px;
-		position: relative;
-		padding: 32px 24px;
-		background-color: #37977b;
-		border-radius: 8px;
-		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
-		z-index: 1;
+
+	@media only screen and (max-width: 660px) {
+		.keyword__container_iklan {
+			height: 58px;
+			position: relative;
+			padding: 32px 24px;
+			background-color: #37977b;
+			border-radius: 8px;
+			box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+			z-index: 1;
+		}
 	}
-	}
+
 	@media only screen and (max-width: 580px) {
-	.keyword__container_iklan {
-		height: 58px;
-		position: relative;
-		padding: 32px 24px;
-		background-color:#37977b;
-		border-radius: 8px;
-		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
-		z-index: 1;
+		.keyword__container_iklan {
+			height: 58px;
+			position: relative;
+			padding: 32px 24px;
+			background-color: #37977b;
+			border-radius: 8px;
+			box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+			z-index: 1;
+		}
 	}
+
+	@media only screen and (max-width: 500px) and (max-width: 877px) {
+		.keyword__container_iklan {
+			height: 58px;
+			position: relative;
+			padding: 32px 24px;
+			background-color: #1e9390;
+			border-radius: 8px;
+			box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+			z-index: 1;
+		}
 	}
-		@media only screen and (max-width: 500px) and (max-width: 877px) {
-	.keyword__container_iklan {
-		height: 58px;
-		position: relative;
-		padding: 32px 24px;
-		background-color:#1e9390;
-		border-radius: 8px;
-		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
-		z-index: 1;
-	}
+
+	#animasi {
+		text-align: center;
 	}
 </style>
 <div class="loadeng">
@@ -806,7 +815,7 @@
 						<div class="char__containerss">
 							<div class="ft-recharge-unify__chip">
 								<h1 class="title text-center">Cek Typo Online</h1>
-									<h3>INPUT</h3>
+								<h3>INPUT</h3>
 							</div>
 						</div>
 
@@ -816,13 +825,13 @@
 								">
 
 								<div class="keyword__container_iklan">
-								<p>Iklan</p>
+									<p>Iklan</p>
 								</div>
 							</div>
 
 							<div class="col-md-8">
 
-							
+
 
 								<div class="keyword__container">
 									<textarea id="input" name="input" class="form-control vertical" rows="15"></textarea>
@@ -835,26 +844,26 @@
 							</div>
 							<div class="col-md-2">
 								<div class="keyword__container_iklan">
-								<p>Iklan</p>
+									<p>Iklan</p>
 								</div>
 							</div>
 						</div>
-					<div class="char__containerss" id="animasi">
+						<div class="" id="animasi">
 							<div class="ft-recharge-unify__chip" style="text-align: center;">
-									<img class="img-fluid" src="<?= base_url(); ?>assets/images/animation.gif" alt="">
+								<!-- <img class="img-fluid" src="<?= base_url(); ?>assets/images/animation.gif" alt=""> -->
 							</div>
 						</div>
 
 						<div class="char__containerss">
 							<div class="ft-recharge-unify__chip">
-									<h3>OUTPUT</h3>
+								<h3>OUTPUT</h3>
 							</div>
 						</div>
 
 						<div class="row">
 							<div class="col-md-2">
 								<div class="keyword__container_iklan ">
-								<p>Iklan</p>
+									<p>Iklan</p>
 								</div>
 							</div>
 
@@ -877,7 +886,7 @@
 
 							<div class="col-md-2">
 								<div class="keyword__container_iklan">
-								<p>Iklan</p>
+									<p>Iklan</p>
 								</div>
 							</div>
 
@@ -885,17 +894,20 @@
 
 
 
-					</div>
+						</div>
 
+					</div>
 				</div>
-			</div>
 			</div>
 
 
 
 			<script>
 				$(document).ready(function() {
-					$('#animasi').hide();
+
+	
+						$('#animasi').hide();
+						$('#animasi').prepend('<img id="theImg"src="<?= base_url(); ?>assets/images/animation.gif" />')
 
 					$('#btnProsesLagi').hide()
 
@@ -995,7 +1007,7 @@
 				});
 
 				$('#btnproses').on('click', function() {
-							$('#animasi').show();
+					$('#animasi').show();
 
 					kosong();
 					$("#output").summernote("reset");
@@ -1030,7 +1042,7 @@
 									// goToByScroll('output');
 									$('html, body').animate({
 										scrollDown: $('#output').summernote('pasteHTML', data).offset().down
-									// $('#animasi').hide()
+										// $('#animasi').hide()
 
 
 
@@ -1076,7 +1088,7 @@
 								contentType: false,
 								success: function(data) {
 									$("#output").summernote("reset");
-								$('#animasi').hide();
+									$('#animasi').hide();
 
 									$('#btnProsesLagi').show()
 
