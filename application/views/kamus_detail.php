@@ -9,7 +9,8 @@
 		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
 		z-index: 1;
 	}
-		@media only screen and (max-width: 600px) {
+
+	@media only screen and (max-width: 600px) {
 		.keyword__container_iklan {
 			/* height: 58px; */
 			position: relative;
@@ -19,14 +20,16 @@
 			box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
 			z-index: 1;
 		}
-			#foto_wrapper {
-				max-width: 20%;
-				margin-top: -52%;
-				max-height: 23%;
-				z-index: 2;
-			}
+
+		#foto_wrapper {
+			max-width: 20%;
+			margin-top: -52%;
+			max-height: 23%;
+			z-index: 2;
 		}
-		@media only screen and (max-width: 660px) {
+	}
+
+	@media only screen and (max-width: 660px) {
 		.keyword__container_iklan {
 			/* height: 58px; */
 			position: relative;
@@ -36,32 +39,35 @@
 			box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
 			z-index: 1;
 		}
-		}
-		@media only screen and (max-width: 580px) {
+	}
+
+	@media only screen and (max-width: 580px) {
 		.keyword__container_iklan {
 			/* height: 58px; */
 			position: relative;
 			padding: 32px 24px;
-			background-color:#37977b;
+			background-color: #37977b;
 			border-radius: 8px;
 			box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
 			z-index: 1;
 		}
-		}
-			@media only screen and (max-width: 500px) and (max-width: 877px) {
+	}
+
+	@media only screen and (max-width: 500px) and (max-width: 877px) {
 		.keyword__container_iklan {
 			/* height: 58px; */
 			position: relative;
 			padding: 32px 24px;
-			background-color:#1e9390;
+			background-color: #1e9390;
 			border-radius: 8px;
 			box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
 			z-index: 1;
 		}
-		}
-		.bege {
-			background: linear-gradient(-145deg, #3ACD99, #0796B6) !important;
-		}
+	}
+
+	.bege {
+		background: linear-gradient(-145deg, #3ACD99, #0796B6) !important;
+	}
 
 	ul {
 		display: block;
@@ -807,7 +813,7 @@ $url = $this->uri->segment(3);
 
 					<div class="col-md-2">
 						<div class="keyword__container_iklan">
-						<p>Iklan</p>
+							<p>Iklan</p>
 						</div>
 					</div>
 
@@ -815,31 +821,39 @@ $url = $this->uri->segment(3);
 
 
 						<div class="keyword__container">
-							<h2 class="keyword__index">Deskripsi Umum</h2>
+							<h2 class="keyword__index">Jenis</h2>
 							<ul class="keyword__list--wrapper">
 
-								<?= $data->deskripsi; ?>
+								<?= $data->jenis; ?>
 
 							</ul>
 						</div>
 						<div class="keyword__container">
-							<h2 class="keyword__index">Deskripsi Wikiedia</h2>
+							<h2 class="keyword__index">Pengertain</h2>
 							<ul class="keyword__list--wrapper">
 
-								<?= $data->deskripsi_wiki; ?>
+								<?= $data->pengertian; ?>
+
+							</ul>
+						</div>
+						<div class="keyword__container">
+							<h2 class="keyword__index">Contoh</h2>
+							<ul class="keyword__list--wrapper">
+
+								<?= $data->contoh; ?>
 
 							</ul>
 						</div>
 
 					</div>
-				
+
 					<div class="col-md-2">
 						<div class="keyword__container_iklan">
-						<p>Iklan</p>
+							<p>Iklan</p>
 						</div>
 					</div>
 
-					
+
 
 					<div>
 
