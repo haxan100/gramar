@@ -145,7 +145,8 @@
 		<!-- <script src="<?= base_url(); ?>assets\js\jQuery-3.3.1\jquery-3.3.1.js"></script> -->
 
 		<div class="modal fade" id="purchaseModal" tabindex="-1" role="dialog" aria-labelledby="purchaseLabel" aria-hidden="true">
-			<div class="modal-dialog">
+			<div class="modal-dialog" style="
+    			width: 50%;		">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -166,12 +167,16 @@
 											<small></small>
 										</div>
 										<div class="form-group">
-											<label for="Deskripsi">Deskripsi Umum</label>
-											<textarea id="Deskripsi" class="form-control" name="" rows="5"></textarea>
+											<label for="Deskripsi">Pengertian</label>
+											<textarea id="pengertian" class="form-control" name="" rows="5"></textarea>
 										</div>
 										<div class="form-group">
-											<label for="deskripsi_wiki">Deskripsi Wikipedia</label>
-											<textarea id="deskripsi_wiki" class="form-control" name="" rows="3"></textarea>
+											<label for="jenis">Jenis</label>
+											<textarea id="jenis" class="form-control" name="" rows="3"></textarea>
+										</div>
+										<div class="form-group">
+											<label for="deskripsi_wiki">Contoh</label>
+											<textarea id="contoh" class="form-control" name="" rows="3"></textarea>
 										</div>
 									</div>
 								</div>
@@ -186,6 +191,8 @@
 			</div>
 		</div>
 	</div>
+	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
 
 	<div id='floorad-wrapper'>
@@ -196,6 +203,39 @@
 
 	<script type="text/javascript">
 		document.addEventListener("DOMContentLoaded", function(event) {
+
+			$('#pengertian').summernote({
+				addclass: {
+					debug: false,
+					classTags: [{
+						title: "Button",
+						value: "btn btn-success"
+					}, "jumbotron", "lead", "img-rounded", "img-circle", "img-responsive", "btn", "btn btn-success", "btn btn-danger", "text-muted", "text-primary", "text-warning", "text-danger", "text-success", "table-bordered", "table-responsive", "alert", "alert alert-success", "alert alert-info", "alert alert-warning", "alert alert-danger", "visible-sm", "hidden-xs", "hidden-md", "hidden-lg", "hidden-print"]
+				},
+				height: 300,
+			});
+			$('#jenis').summernote({
+				addclass: {
+					debug: false,
+					classTags: [{
+						title: "Button",
+						value: "btn btn-success"
+					}, "jumbotron", "lead", "img-rounded", "img-circle", "img-responsive", "btn", "btn btn-success", "btn btn-danger", "text-muted", "text-primary", "text-warning", "text-danger", "text-success", "table-bordered", "table-responsive", "alert", "alert alert-success", "alert alert-info", "alert alert-warning", "alert alert-danger", "visible-sm", "hidden-xs", "hidden-md", "hidden-lg", "hidden-print"]
+				},
+				height: 100,
+			});
+			$('#contoh').summernote({
+				addclass: {
+					debug: false,
+					classTags: [{
+						title: "Button",
+						value: "btn btn-success"
+					}, "jumbotron", "lead", "img-rounded", "img-circle", "img-responsive", "btn", "btn btn-success", "btn btn-danger", "text-muted", "text-primary", "text-warning", "text-danger", "text-success", "table-bordered", "table-responsive", "alert", "alert alert-success", "alert alert-info", "alert alert-warning", "alert alert-danger", "visible-sm", "hidden-xs", "hidden-md", "hidden-lg", "hidden-print"]
+				},
+				height: 100,
+			});
+
+
 			var bu = "<?= base_url(); ?>";
 			console.log("fefrefhf");
 
@@ -263,18 +303,20 @@
 			$('#btnTambah').on('click', function() {
 				$('#btnEdit').hide();
 				var kamus = $('#kamus').val();
-				var Deskripsi = $('#Deskripsi').val();
-				var deskripsi_wiki = $('#deskripsi_wiki').val();
+				var pengertian = $('#pengertian').val();
+				var jenis = $('#jenis').val();
+				var contoh = $('#contoh').val();
 
 
-				if (Deskripsi != "" && kamus != "" && deskripsi_wiki != "") {
+				if (pengertian != "" && kamus != "" && jenis != "" && contoh != "") {
 					$.ajax({
 						url: bu + "Admin/tambahKamus",
 						type: "POST",
 						data: {
 							kamus: kamus,
-							Deskripsi: Deskripsi,
-							deskripsi_wiki: deskripsi_wiki,
+							pengertian: pengertian,
+							jenis: jenis,
+							contoh: contoh,
 						},
 						cache: false,
 						success: function(data) {

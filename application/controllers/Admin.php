@@ -294,8 +294,9 @@ class Admin extends CI_Controller {
 	{
 		// var_dump($_POST);die;
 		$kamus = $this->input->post('kamus', TRUE);
-		$Deskripsi = $this->input->post('Deskripsi', TRUE);
-		$deskripsi_wiki = $this->input->post('deskripsi_wiki', TRUE);
+		$pengertian = $this->input->post('pengertian', TRUE);
+		$jenis = $this->input->post('jenis', TRUE);
+		$contoh = $this->input->post('contoh', TRUE);
 
 		$message = 'Gagal menambah data !<br>Silahkan lengkapi data yang diperlukan.';
 		$errorInputs = array();
@@ -307,8 +308,9 @@ class Admin extends CI_Controller {
 		} else {
 			$in = array(
 				'nama_kamus' => $kamus,
-				'deskripsi' => $Deskripsi,
-				'deskripsi_wiki' => $deskripsi_wiki,
+				'jenis' => $jenis,
+				'contoh' => $contoh,
+				'pengertian' => $pengertian,
 				
 			);
 			$this->KataModel->tambahKamus($in);
