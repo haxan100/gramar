@@ -27,6 +27,7 @@
 
 					<a href=" <?= base_url(); ?>Admin/kamus" class="logregBtn">Kamus Arti</a>
 					<a href=" <?= base_url(); ?>Admin" class="logregBtn">Kata Dasar</a>
+					<a href=" <?= base_url(); ?>Admin/Setting" class="logregBtn">Seting Web</a>
 
 
 					<i class="fa fa-search pull-right topsearch"></i>

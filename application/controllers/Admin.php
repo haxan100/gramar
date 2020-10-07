@@ -448,6 +448,22 @@ class Admin extends CI_Controller {
 			'errorInputs' => $errorInputs
 		));
 	}
+	public function Setting()
+	{
+
+		$this->cekLoginAdmin();
+		$data['listTipe'] =
+			$this->KataModel->data_AllTipe($_POST);
+
+		$data['title'] = "Admin";
+
+		$this->load->view('templates/header', $data);
+		// $this->load->view('templates/navbar');
+
+		$this->load->view('templates/navbar_admin');
+		$this->load->view('admin_setting', $data);
+		$this->load->view('templates/footer');
+	}
         
 }
         
