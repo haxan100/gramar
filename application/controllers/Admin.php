@@ -239,38 +239,44 @@ class Admin extends CI_Controller {
 
 		foreach ($dt['data']->result() as $row) {
 
-			if(strlen($row->deskripsi)>500){
-				$desk= substr($row->deskripsi, 0, -500);
-			} else if (strlen($row->deskripsi) > 400) {
-				$desk = substr($row->deskripsi, 0, -400);
-			} else if (strlen($row->deskripsi) > 300) {
-				$desk = substr($row->deskripsi, 0, -300);
-			} else if (strlen($row->deskripsi) > 200) {
-				$desk = substr($row->deskripsi, 0, -100);
+			if(strlen($row->pengertian)>500){
+				$pengertian= substr($row->pengertian, 0, -500);
+			} else if (strlen($row->pengertian) > 400) {
+				$pengertian = substr($row->pengertian, 0, -400);
+			} else if (strlen($row->pengertian) > 300) {
+				$pengertian = substr($row->pengertian, 0, -300);
+			} else if (strlen($row->pengertian) > 200) {
+				$pengertian = substr($row->pengertian, 0, -100);
 			} else{
-				$desk = $row->deskripsi;
+				$pengertian = $row->pengertian;
 			}
 
-			if (strlen($row->deskripsi_wiki) > 500) {
-				$desk_wiki = substr($row->deskripsi_wiki, 0, -500);
-			} else if (strlen($row->deskripsi_wiki) > 400) {
-				$desk_wiki = substr($row->deskripsi_wiki, 0, -400);
-			} else if (strlen($row->deskripsi_wiki) > 300) {
-				$desk_wiki = substr($row->deskripsi_wiki, 0, -300);
-			} else if (strlen($row->deskripsi_wiki) > 200) {
-				$desk_wiki = substr($row->deskripsi_wiki, 0, -100);
+			if (strlen($row->contoh) > 500) {
+				$contoh = substr($row->contoh, 0, -500);
+			} else if (strlen($row->contoh) > 400) {
+				$contoh = substr($row->contoh, 0, -400);
+			} else if (strlen($row->contoh) > 300) {
+				$contoh = substr($row->contoh, 0, -300);
+			} else if (strlen($row->contoh) > 200) {
+				$contoh = substr($row->contoh, 0, -100);
 			} else{
 
-				$desk_wiki = $row->deskripsi_wiki;
+				$contoh = $row->contoh;
 			}
 			
 			$fields = array($no++);
 			$fields[] = $row->nama_kamus . '<br>';
-			$fields[] = $desk . '<br>';
-			$fields[] = $desk_wiki . '<br>';
+			$fields[] = $row->jenis . '<br>';
+			$fields[] = $pengertian . '<br>';
+			$fields[] = $contoh . '<br>';
 
 			$fields[] = '
-			<button class="btn btn-round btn-warning btnUbah" data-id_kamus="' . $row->id_kamus . '"	 data-nama_kamus="' . $row->nama_kamus . '"
+			<button class="btn btn-round btn-warning btnUbah" data-id_kamus="' . $row->id_kamus . '"	 
+			data-nama_kamus="' . $row->nama_kamus . '"
+			data-jenis="' . $row->jenis . '"
+			data-pengertian="' . $row->pengertian . '"
+			data-contoh="' . $row->contoh . '"
+
 			data-deskripsi="' . $row->deskripsi . '"
 			data-deskripsi_wiki="' . $row->deskripsi_wiki . '"
 				>Edit</button>        || 
@@ -407,8 +413,9 @@ class Admin extends CI_Controller {
 	{
 		$nama_kamus = $this->input->post('nama_kamus', TRUE);
 		$id_kamus = $this->input->post('idkamus', TRUE);
-		$Deskripsi = $this->input->post('Deskripsi', TRUE);
-		$deskripsi_wiki = $this->input->post('deskripsi_wiki', TRUE);
+		$pengertian = $this->input->post('pengertian', TRUE);
+		$jenis = $this->input->post('jenis', TRUE);
+		$contoh = $this->input->post('contoh', TRUE);
 
 		$message = 'Gagal mengedit Kamus!<br>Silahkan lengkapi data yang diperlukan.';
 
@@ -416,8 +423,9 @@ class Admin extends CI_Controller {
 		$status = true;
 		$in = array(
 			'nama_kamus' => $nama_kamus,
-			'Deskripsi' => $Deskripsi,
-			'deskripsi_wiki' => $deskripsi_wiki,
+			'contoh' => $contoh,
+			'jenis' => $jenis,
+			'pengertian' => $pengertian,
 		);
 
 		if (empty($nama_kamus)) {

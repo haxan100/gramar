@@ -90,6 +90,7 @@
 											<tr>
 												<th>No.</th>
 												<th style="max-width: 260px;">Nama Kamus </th>
+												<th style="max-width: 200px;">Jenis </th>
 
 												<th> Deskrispi Umum</th>
 												<th> Deskrispi WikiPedia</th>
@@ -397,17 +398,23 @@
 			$('body').on('click', '.btnUbah', function() {
 				var id_kamus = $(this).data('id_kamus');
 				var nama_kamus = $(this).data('nama_kamus');
+				var pengertian = $(this).data('pengertian');
+				var contoh = $(this).data('contoh');
+				var jenis = $(this).data('jenis');
+
+
 				var deskripsi_wiki = $(this).data('deskripsi_wiki');
 				var deskripsi = $(this).data('deskripsi');
-				console.log(id_kamus, nama_kamus, deskripsi_wiki, deskripsi);
+				// console.log(jenis,contoh, pengertian, deskripsi);
 
 				$('#btnTambah').hide();
 
 				$('#idkamus').val(id_kamus);
-				$('#deskripsi_wiki').val(deskripsi_wiki);
 				$('#kamus').val(nama_kamus);
-				$('#Deskripsi').val(deskripsi);
-
+				$('#jenis').val(jenis);
+				$('#jenis').summernote('pasteHTML', jenis)
+				$('#pengertian').summernote('pasteHTML', pengertian)
+				$('#contoh').summernote('pasteHTML', contoh)
 				$('#purchaseModal').modal('show');
 
 			});
@@ -415,20 +422,19 @@
 
 
 				var idkamus = $('#idkamus').val();
-				var deskripsi_wiki = $('#deskripsi_wiki').val();
-				var Deskripsi = $('#Deskripsi').val();
 				var nama_kamus = $('#kamus').val();
+				var pengertian = $('#pengertian').val();
+				var contoh = $('#contoh').val();
+				var jenis = $('#jenis').val();
+				console.log(pengertian, contoh, jenis);
+				// return false
 
-				console.log(idkamus, Deskripsi, deskripsi_wiki, nama_kamus)
-				// return false;
-				if (idkamus == "" || nama_kamus == "" || deskripsi_wiki == "") {
+				if (idkamus == "" || nama_kamus == "" || pengertian == "") {
 					Swal.fire(
 						'Eror!',
 						"Mohon Di Isi Semua!",
 						'error'
 					)
-					// alert("Mohon Di Isi Semua!")
-
 				} else {
 					$.ajax({
 						url: bu + 'Admin/EditKamus',
@@ -437,8 +443,9 @@
 						data: {
 							nama_kamus: nama_kamus,
 							idkamus: idkamus,
-							Deskripsi: Deskripsi,
-							deskripsi_wiki: deskripsi_wiki,
+							pengertian: pengertian,
+							contoh: contoh,
+							jenis: jenis,
 						}
 					}).done(function(e) {
 						// console.log(e);
