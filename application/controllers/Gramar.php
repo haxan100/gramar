@@ -173,10 +173,10 @@ public function kamusDetail($id)
 	{
 	$data['data'] = $this->KataModel->getKamusById($id)[0];
 
-	// var_dump($data);
+	// var_dump($data['data']);
 
 	$data['title'] = "Kamus Detail - ".$this->KataModel->getKamusById($id)[0]->nama_kamus;
-	$this->load->view('templates/header', $data);
+	$this->load->view('templates/headerKamusDetail', $data);
 
 	// $this->load->view('templates/header');
 	$this->load->view('templates/navbar');
