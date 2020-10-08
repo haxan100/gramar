@@ -819,15 +819,6 @@ $url = $this->uri->segment(3);
 
 					<div class="col-md-8">
 
-
-						<div class="keyword__container">
-							<h2 class="keyword__index">Jenis</h2>
-							<ul class="keyword__list--wrapper">
-
-								<?= $data->jenis; ?>
-
-							</ul>
-						</div>
 						<div class="keyword__container">
 							<h2 class="keyword__index">Pengertain</h2>
 							<ul class="keyword__list--wrapper">
@@ -836,6 +827,15 @@ $url = $this->uri->segment(3);
 
 							</ul>
 						</div>
+						<div class="keyword__container">
+							<h2 class="keyword__index">Jenis</h2>
+							<ul class="keyword__list--wrapper">
+
+								<?= $data->jenis; ?>
+
+							</ul>
+						</div>
+
 						<div class="keyword__container">
 							<h2 class="keyword__index">Contoh</h2>
 							<ul class="keyword__list--wrapper">

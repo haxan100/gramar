@@ -11,7 +11,7 @@
 
 	<meta name="description" content="<?= $data->pengertian ?> ">
 
-	<meta name="keywords" content="<?= $data->contoh ?> " />
+	<meta name="keywords" content="<?= $title ?>  " />
 
 
 	<!-- ------------------------ -->
