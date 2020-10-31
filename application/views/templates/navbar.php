@@ -18,19 +18,19 @@
 	} */
 
 	@media (min-width:320px) {
-		.textatas {
+		/* .textatas {
 			margin-top: -12%;
 			padding: 0;
-		}
+		} */
 
 		/* smartphones, iPhone, portrait 480x320 phones */
 	}
 
 	@media (min-width:481px) {
-		.textatas {
+		/* .textatas {
 			margin-top: -12%;
 			padding: 0;
-		}
+		} */
 
 		/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
 	}

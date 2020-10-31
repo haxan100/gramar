@@ -97,6 +97,11 @@ public function punctuationRemovalandstopwardRemoval($string){
 			$input  = $_POST['input'];
 			$in = $this->strip_word_html($input);
 			$token  = $this->multiexplode(array(" ", "\n"), $in);
+			$token = str_replace("?", " ?", $token);
+
+		// var_dump($token);
+		// die;
+
 			// $token  = $this->multiexplode(array(" ","\n"),$input);
 			// $arr =$this->arr(); 
 			// var_dump($arr);die;
@@ -175,7 +180,7 @@ public function kamusDetail($id)
 
 	// var_dump($data['data']);
 
-	$data['title'] = "Kamus Detail - ".$this->KataModel->getKamusById($id)[0]->nama_kamus;
+	$data['title'] = "Arti Kata ".$this->KataModel->getKamusById($id)[0]->nama_kamus." - Pengertian Jenis dan Contohnya";
 	$this->load->view('templates/headerKamusDetail', $data);
 
 	// $this->load->view('templates/header');
